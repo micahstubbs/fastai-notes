@@ -67,8 +67,50 @@ kg download
 
 configure the new data to the file structure in the same way that was used in the sample lesson 1 notebook
 
+└── dogscats
+    ├── models
+    ├── sample
+    │   ├── train
+    │   │   ├── cats
+    │   │   └── dogs
+    │   └── valid
+    │       ├── cats
+    │       └── dogs
+    ├── test1
+    ├── train
+    │   ├── cats
+    │   └── dogs
+    └── valid
+        ├── cats
+        └── dogs
+
+
+first, let's split the train date further into 75% `train` and 25% `valid`
+
+```
+cd kaggle/dogs-vs-cats-redux-kernels-edition
+mv data/train data/train1
+mkdir data/train
+mkdir data/valid
+python split-train-valid.py
+```
+
+now let's make the subfolders by class that the lesson 1 notebook expects. 
+first for the training set:
+
 ```
 cd kaggle/dogs-vs-cats-redux-kernels-edition/data/train
+mkdir dogs
+mv dog.* dogs/
+mkdir cats
+mv cat.* cats/
+```
+
+and once more for the validation set:
+
+
+```
+cd kaggle/dogs-vs-cats-redux-kernels-edition/data/valid
 mkdir dogs
 mv dog.* dogs/
 mkdir cats
