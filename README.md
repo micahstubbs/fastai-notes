@@ -51,4 +51,26 @@ paste into `keras.json` this config that tells Keras to use the Theano backend:
 }
 ```
 
+now following the [lesson1 homework guide](http://wiki.fast.ai/index.php/Lesson_1)
 
+```
+# install kaggle cli
+pip install kaggle-cli
+
+# download data for Dogs vs. Cats Redux competition
+# set a global kg config with username, password, competition
+kg config -g -u yourusername -p yourpassword -c dogs-vs-cats-redux-kernels-edition
+# $ kg download
+kg download 
+
+```
+
+configure the new data to the file structure in the same way that was used in the sample lesson 1 notebook
+
+```
+cd kaggle/dogs-vs-cats-redux-kernels-edition/data/train
+mkdir dogs
+mv dog.* dogs/
+mkdir cats
+mv cat.* cats/
+```
